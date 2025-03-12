@@ -3,17 +3,20 @@ using UnityEngine;
 public class CoinScript : MonoBehaviour
 {
     public float attractionSpeed = 2.4f; // Speed of attraction/repulsion
-    public float detectionRange = 1.8f; // Distance where the effect is applied
+    public float detectionRange = 3.5f; // Distance where the effect is applied
     private Transform player;
     private SpriteRenderer playerSprite;
     private Rigidbody2D rb;
+    private AudioSource audioSource;
     private bool isRedCoin;
+    private bool collected = false;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerSprite = player.GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
 
         // Check if this coin is Red or Blue
         isRedCoin = gameObject.CompareTag("RedCoin");
@@ -21,8 +24,7 @@ public class CoinScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player == null) {
-            Debug.Log("Player is missing!");
+        if (collected || player == null) {
             return;
         }
 
@@ -50,6 +52,23 @@ public class CoinScript : MonoBehaviour
         if (other.CompareTag("WinGround"))
         {
             Debug.Log("Coin is inside win area!");
+            collected = true; // Mark as collected to prevent multiple triggers
+            rb.linearVelocity = Vector2.zero; // Stop moving
+
+            if (audioSource != null)
+            {
+                audioSource.Play(); // Play sound effect
+            }
+
+            // notify GameManager
+            GameManager.instance.CoinCollected(); // Notify GameManager
+
+            // Disable sprite and collider but keep the object until sound finishes
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Collider2D>().enabled = false;
+
+            // Destroy after sound finishes
+            Destroy(gameObject, audioSource.clip.length);
         }
     }
 }

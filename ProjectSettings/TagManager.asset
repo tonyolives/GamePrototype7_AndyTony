@@ -7,6 +7,8 @@ TagManager:
   - RedCoin
   - BlueCoin
   - WinGround
+  - BluePassWall
+  - RedPassWall
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - Water
   - UI
   - Wall
-  - Obstacle
-  - Enemy
+  - Coin
   - Player
+  - PassWall
   - 
   - 
   - 
