@@ -10,6 +10,8 @@ TagManager:
   - BluePassWall
   - RedPassWall
   - Enemy
+  - RedMissile
+  - BlueMissile
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - Coin
   - Player
   - PassWall
-  - 
-  - 
+  - MissileTurret
+  - Missile
   - 
   - 
   - 
