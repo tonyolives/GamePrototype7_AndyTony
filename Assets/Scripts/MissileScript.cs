@@ -5,7 +5,7 @@ public class MissileScript : MonoBehaviour
     public float baseSpeed = 3f; // missile's base forward speed
     public float explosionRadius = 2.5f; // radius for explosion damage
     public float lifetime = 4f; // time before missile self-destructs
-    public float forcePower = 8f; // max attractive / repelling force
+    public float forcePower = 7f; // max attractive / repelling force
     public float influenceRange = 3f; // distance at which polarity force applies
     public LayerMask destructibleLayer; // layer mask for destructible objects
 
