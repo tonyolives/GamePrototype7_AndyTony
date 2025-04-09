@@ -1,11 +1,11 @@
 using UnityEngine;
-
 public class CoinScript : MonoBehaviour
 {
     public float attractionSpeed = 2.4f; // Speed of attraction/repulsion
     public float detectionRange = 3.5f; // Distance where the effect is applied
     private Transform player;
     private SpriteRenderer playerSprite;
+    private PlayerScript playerScript; // Add this line to declare the variable
     private Rigidbody2D rb;
     private AudioSource audioSource;
     private bool isRedCoin;
@@ -15,16 +15,17 @@ public class CoinScript : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerSprite = player.GetComponent<SpriteRenderer>();
+        playerScript = player.GetComponent<PlayerScript>(); // Initialize it here
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
-
         // Check if this coin is Red or Blue
         isRedCoin = gameObject.CompareTag("RedCoin");
     }
 
     void FixedUpdate()
     {
-        if (collected || player == null) {
+        if (collected || player == null)
+        {
             return;
         }
 
@@ -32,6 +33,16 @@ public class CoinScript : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.position);
         if (distance > detectionRange) return; // only react if within range
 
+        // Check if player is in neutral state
+        if (playerScript != null && playerScript.IsInNeutralState())
+        {
+            // Always move toward player
+            Vector2 direction1 = (player.position - transform.position).normalized;
+            rb.MovePosition(rb.position + direction1 * attractionSpeed * Time.fixedDeltaTime);
+            return;
+        }
+
+        // Regular color-based behavior
         bool playerIsRed = (playerSprite.color == Color.red);
         bool shouldMoveTowardPlayer = (playerIsRed && !isRedCoin) || (!playerIsRed && isRedCoin);
 
@@ -54,19 +65,15 @@ public class CoinScript : MonoBehaviour
             Debug.Log("Coin is inside win area!");
             collected = true; // Mark as collected to prevent multiple triggers
             rb.linearVelocity = Vector2.zero; // Stop moving
-
             if (audioSource != null)
             {
                 audioSource.Play(); // Play sound effect
             }
-
             // notify GameManager
             GameManager.instance.CoinCollected(); // Notify GameManager
-
             // Disable sprite and collider but keep the object until sound finishes
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;
-
             // Destroy after sound finishes
             Destroy(gameObject, audioSource.clip.length);
         }
