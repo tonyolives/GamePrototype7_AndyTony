@@ -9,6 +9,7 @@ TagManager:
   - WinGround
   - BluePassWall
   - RedPassWall
+  - Ground
   layers:
   - Default
   - TransparentFX
