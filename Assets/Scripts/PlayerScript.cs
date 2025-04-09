@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     float moveLimiter = 0.7f;
     public float runSpeed = 20.0f;
     private SpriteRenderer _spriteRenderer;
+    public AudioClip victoryClip;
+    public AudioClip deathClip;
     private AudioSource audioSource;
 
     void Start ()
@@ -83,12 +85,32 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    // collision activation
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+         Debug.Log($"Collided with: {other.gameObject.name}");
+         
+         // hit enemy
+         if (other.gameObject.CompareTag("Enemy"))
+         {
+            Debug.Log("Enemy hit!");
+            StartCoroutine(DieWithDelay());
+        }
+    }
+
+    private IEnumerator DieWithDelay()
+    {
+        Debug.Log("DYING...");
+        PlayDeathSound();
+        yield return new WaitForSeconds(1.0f);
+        
+        // next line after delay
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void StartFlashingAndRestart()
     {
-        if (audioSource != null)
-        {
-            audioSource.Play(); // Play sound effect
-        }
+        PlayVictorySound();
         StartCoroutine(FlashGreenAndRestart());
     }
 
@@ -103,6 +125,18 @@ public class PlayerScript : MonoBehaviour
         }
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void PlayVictorySound()
+    {
+        audioSource.clip = victoryClip;
+        audioSource.Play();
+    }
+
+    public void PlayDeathSound()
+    {
+        audioSource.clip = deathClip;
+        audioSource.Play();
     }
 
 }
