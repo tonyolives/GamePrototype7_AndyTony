@@ -43,21 +43,25 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadGunScene()
     {
+        Resume();
         SceneManager.LoadScene("TonyGunScene");
     }
 
     public void LoadAmariScene()
     {
+        Resume();
         SceneManager.LoadScene("AmariTestingScene");
     }
 
     public void LoadAndyScene()
     {
+        Resume();
         SceneManager.LoadScene("AndyScene");
     }
 
     public void LoadTutorialScene()
     {
+        Resume();
         SceneManager.LoadScene("MainScene");
     }
 
