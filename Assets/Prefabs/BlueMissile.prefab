@@ -134,7 +134,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6914784256734148285}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -151,7 +151,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &-9048845401146424606
 MonoBehaviour:
@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 3
-  explosionRadius: 2.5
-  lifetime: 4
-  forcePower: 8
+  explosionRadius: 1.2
+  lifetime: 8
+  forcePower: 7
   influenceRange: 3
   destructibleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096

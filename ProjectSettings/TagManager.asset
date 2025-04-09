@@ -13,6 +13,8 @@ TagManager:
   - Enemy
   - RedMissile
   - BlueMissile
+  - Turret
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - PassWall
   - MissileTurret
   - Missile
-  - 
+  - Breakable
   - 
   - 
   - 
