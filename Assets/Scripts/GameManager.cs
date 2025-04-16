@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private int collectedCoins = 0;
-    private int totalCoins = 8;
+    public int totalCoins = 8;
     private PlayerScript playerScript;
 
     void Awake()
