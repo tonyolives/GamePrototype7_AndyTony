@@ -8,6 +8,8 @@ public class PlayerScript : MonoBehaviour
     private Vector2 input;
     float moveLimiter = 0.7f;
     public float runSpeed = 20.0f;
+    public float moveForce = 13.0f;
+    public float friction = -10.0f;
     private SpriteRenderer _spriteRenderer;
     public AudioClip victoryClip;
     public AudioClip deathClip;
@@ -107,6 +109,15 @@ public class PlayerScript : MonoBehaviour
         }
 
         rb.linearVelocity = input * runSpeed;
+
+        /*
+        GetComponent<Rigidbody2D>().linearVelocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().linearVelocity, runSpeed);
+        GetComponent<Rigidbody2D>().AddForce(input.normalized * moveForce);
+        if (input.normalized.Equals(Vector2.zero))
+        {
+            GetComponent<Rigidbody2D>().linearVelocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().linearVelocity, 0.0f);
+            GetComponent<Rigidbody2D>().AddForce(input.normalized * friction);
+        }*/
     }
 
     void UpdateWallCollision()
