@@ -59,6 +59,18 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("AndyScene");
     }
 
+    public void LoadForwardScene()
+    {
+        Resume();
+        SceneManager.LoadScene("ForwardScene");
+    }
+
+    public void LoadBackTrackScene()
+    {
+        Resume();
+        SceneManager.LoadScene("BacktrackScene");
+    }
+
     public void LoadTutorialScene()
     {
         Resume();

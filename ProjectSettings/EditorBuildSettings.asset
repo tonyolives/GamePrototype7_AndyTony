@@ -5,18 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Old Scenes/MainScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Old Scenes/AmariTestingScene.unity
     guid: 4d1a7dc4c433b114abcc66cb0111694c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Old Scenes/AndyScene.unity
     guid: 32c4bb91509404a6faaf332867f3828b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Old Scenes/TonyGunScene.unity
     guid: 77452f4cc3e084321b1a17a4eda76b01
+  - enabled: 1
+    path: Assets/Scenes/ForwardScene.unity
+    guid: 44621802ad2cb4b01ba5bd55aae3001e
+  - enabled: 1
+    path: Assets/Scenes/BacktrackScene.unity
+    guid: f674481eb474a48c3a9dc874c346958d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

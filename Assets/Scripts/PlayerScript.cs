@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     Rigidbody2D rb;
-    float horizontal;
-    float vertical;
+    private Vector2 input;
     float moveLimiter = 0.7f;
     public float runSpeed = 20.0f;
     private SpriteRenderer _spriteRenderer;
@@ -73,8 +72,10 @@ public class PlayerScript : MonoBehaviour
             return;
 
         // movement
-        horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
-        vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
+
+        input.Normalize();
 
         // on spacebar click
         // on spacebar click - only allow color change if not in neutral state
@@ -105,14 +106,7 @@ public class PlayerScript : MonoBehaviour
             return;
         }
 
-        if (horizontal != 0 && vertical != 0) // Check for diagonal movement
-        {
-            // limit movement speed diagonally, so you move at 70% speed
-            horizontal *= moveLimiter;
-            vertical *= moveLimiter;
-        }
-
-        rb.linearVelocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        rb.linearVelocity = input * runSpeed;
     }
 
     void UpdateWallCollision()
