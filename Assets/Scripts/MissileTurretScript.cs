@@ -12,6 +12,11 @@ public class MissileTurretScript : MonoBehaviour
 
     public bool isBlue;
     public bool isRed;
+    public bool isWide;
+
+    public Transform widePointcenter;
+    public Transform widePointLeft;
+    public Transform widePointright;
 
     void Start()
     {
@@ -51,20 +56,48 @@ public class MissileTurretScript : MonoBehaviour
         // randomly choose a red or blue missile to fire
         GameObject prefab = (Random.value > 0.5f) ? redMissilePrefab : blueMissilePrefab;
 
-        Instantiate(prefab, firePoint.position, firePoint.rotation);
+        if (isWide)
+        {
+            Instantiate(prefab, widePointcenter.position, widePointcenter.rotation);
+            Instantiate(prefab, widePointLeft.position, widePointLeft.rotation);
+            Instantiate(prefab, widePointright.position, widePointright.rotation);
+        }
+        else
+        {
+            Instantiate(prefab, firePoint.position, firePoint.rotation);
+        }
     }
 
     void FireRed()
     {
         // Choose red missile and fire
         GameObject prefab = redMissilePrefab;
-        Instantiate(prefab, firePoint.position, firePoint.rotation);
+
+        if (isWide)
+        {
+            Instantiate(prefab, widePointcenter.position, widePointcenter.rotation);
+            Instantiate(prefab, widePointLeft.position, widePointLeft.rotation);
+            Instantiate(prefab, widePointright.position, widePointright.rotation);
+        }
+        else
+        {
+            Instantiate(prefab, firePoint.position, firePoint.rotation);
+        }
     }
 
     void FireBlue()
     {
         // Choose blue missile and fire
         GameObject prefab = blueMissilePrefab;
-        Instantiate(prefab, firePoint.position, firePoint.rotation);
+        if (isWide)
+        {
+            Instantiate(prefab, widePointcenter.position, widePointcenter.rotation);
+            Instantiate(prefab, widePointLeft.position, widePointLeft.rotation);
+            Instantiate(prefab, widePointright.position, widePointright.rotation);
+        }
+        else
+        {
+            Instantiate(prefab, firePoint.position, firePoint.rotation);
+        }
     }
 }

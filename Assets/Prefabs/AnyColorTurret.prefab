@@ -176,6 +176,10 @@ MonoBehaviour:
   firePoint: {fileID: 69378846129472592}
   isBlue: 0
   isRed: 0
+  isWide: 0
+  widePointcenter: {fileID: 69378846129472592}
+  widePointLeft: {fileID: 69378846129472592}
+  widePointright: {fileID: 69378846129472592}
 --- !u!1 &3098636941074568153
 GameObject:
   m_ObjectHideFlags: 0
