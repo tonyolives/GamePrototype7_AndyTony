@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 37b075ff60950f4429e814da05f3ce3a
+guid: 70eb7c0533c1a4f429bd1a8e62077a9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5306214330980326434
-    second: ChargeState-02_0
+      213: 8431599947164262453
+    second: TurretResize3-13_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChargeState-02_0
+      name: TurretResize3-13_0
       rect:
         serializedVersion: 2
-        x: 570
-        y: 102
-        width: 1299
-        height: 2304
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 37
+        y: 27
+        width: 326
+        height: 577
+      alignment: 9
+      pivot: {x: 0.49770722, y: 0.28495216}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22c5b2c02d573a940800000000000000
-      internalID: 5306214330980326434
+      spriteID: 530adeaba7f030570800000000000000
+      internalID: 8431599947164262453
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b8615f76ac2c22a42ae1266a788a9d0b
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TurretResize3-13_0: 8431599947164262453
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

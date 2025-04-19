@@ -24,14 +24,14 @@ public class MissileTurretScript : MonoBehaviour
         if (isBlue == false && isRed == true)
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _spriteRenderer.color = Color.red;            
+            //_spriteRenderer.color = Color.red;            
             InvokeRepeating("FireRed", 1f, fireRate); // start firing red missiles repeatedly
         }
 
         if (isBlue == true && isRed == false)
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _spriteRenderer.color = Color.blue;            
+            //_spriteRenderer.color = Color.blue;            
             InvokeRepeating("FireBlue", 1f, fireRate); // start firing red missiles repeatedly
         } 
     }
