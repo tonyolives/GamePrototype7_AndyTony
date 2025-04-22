@@ -465,6 +465,10 @@ MonoBehaviour:
   firePoint: {fileID: 493731122}
   isBlue: 1
   isRed: 0
+  isWide: 0
+  widePointcenter: {fileID: 0}
+  widePointLeft: {fileID: 0}
+  widePointright: {fileID: 0}
 --- !u!60 &493731124
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -911,9 +915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e985fa3a3a3114164bb459907eefba72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 7
-  moveForce: 7
-  friction: 5
+  moveForce: 30
   victoryClip: {fileID: 8300000, guid: 4cff3deb289b5482da9487a977039cbd, type: 3}
   deathClip: {fileID: 8300000, guid: 19e46aa0f754a4371b54da1affd2aa8a, type: 3}
 --- !u!58 &750831443
@@ -965,8 +967,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_LinearDamping: 2
+  m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -978,7 +980,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &750831445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1086,6 +1088,10 @@ MonoBehaviour:
   firePoint: {fileID: 845198541}
   isBlue: 0
   isRed: 1
+  isWide: 0
+  widePointcenter: {fileID: 0}
+  widePointLeft: {fileID: 0}
+  widePointright: {fileID: 0}
 --- !u!60 &845198539
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1471,6 +1477,10 @@ MonoBehaviour:
   firePoint: {fileID: 1198989633}
   isBlue: 0
   isRed: 1
+  isWide: 0
+  widePointcenter: {fileID: 0}
+  widePointLeft: {fileID: 0}
+  widePointright: {fileID: 0}
 --- !u!60 &1198989631
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1685,6 +1695,10 @@ MonoBehaviour:
   firePoint: {fileID: 1433334300}
   isBlue: 0
   isRed: 1
+  isWide: 0
+  widePointcenter: {fileID: 0}
+  widePointLeft: {fileID: 0}
+  widePointright: {fileID: 0}
 --- !u!60 &1433334298
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1842,6 +1856,10 @@ MonoBehaviour:
   firePoint: {fileID: 1460586566}
   isBlue: 1
   isRed: 0
+  isWide: 0
+  widePointcenter: {fileID: 0}
+  widePointLeft: {fileID: 0}
+  widePointright: {fileID: 0}
 --- !u!60 &1460586564
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2150,6 +2168,10 @@ MonoBehaviour:
   firePoint: {fileID: 1659339073}
   isBlue: 0
   isRed: 1
+  isWide: 0
+  widePointcenter: {fileID: 0}
+  widePointLeft: {fileID: 0}
+  widePointright: {fileID: 0}
 --- !u!60 &1659339071
 PolygonCollider2D:
   m_ObjectHideFlags: 0

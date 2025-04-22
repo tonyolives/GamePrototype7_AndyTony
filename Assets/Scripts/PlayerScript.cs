@@ -6,10 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     Rigidbody2D rb;
     private Vector2 input;
-    float moveLimiter = 0.7f;
-    public float runSpeed = 20.0f;
-    public float moveForce = 13.0f;
-    public float friction = -10.0f;
+    public float moveForce = 30.0f;
     private SpriteRenderer _spriteRenderer;
     public AudioClip victoryClip;
     public AudioClip deathClip;
@@ -19,7 +16,6 @@ public class PlayerScript : MonoBehaviour
     private Color originalColor;
     private Coroutine neutralStateCoroutine;
 
-    // Add this method to your PlayerScript
     public void ActivateNeutralState(float duration)
     {
         // Cancel any existing neutral state
@@ -32,7 +28,7 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator NeutralStateRoutine(float duration)
     {
-        // Save original color and set neutral state
+        // save original color and set neutral state
         isNeutral = true;
         originalColor = _spriteRenderer.color;
         _spriteRenderer.color = Color.green;
@@ -62,6 +58,7 @@ public class PlayerScript : MonoBehaviour
 
         // rigid body component to access velocity
         rb = GetComponent<Rigidbody2D>();
+        rb.linearDamping = 2f;
 
         // audio source component to access victory noise
         audioSource = GetComponent<AudioSource>();
@@ -100,24 +97,24 @@ public class PlayerScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Skip movement if player is dying
+        // skip movement if player is dying
         if (isDying)
         {
-            // Immediately stop all movement
+            // immediately stop all movement
             rb.linearVelocity = Vector2.zero;
             return;
         }
 
-        rb.linearVelocity = input * runSpeed;
+        // player isnt dying! handle movement now
+        HandleMovement();
+    }
 
-        /*
-        GetComponent<Rigidbody2D>().linearVelocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().linearVelocity, runSpeed);
-        GetComponent<Rigidbody2D>().AddForce(input.normalized * moveForce);
-        if (input.normalized.Equals(Vector2.zero))
+    void HandleMovement() {
+        // apply movement force (if player trying to move)
+        if (input.sqrMagnitude > 0.01f)
         {
-            GetComponent<Rigidbody2D>().linearVelocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().linearVelocity, 0.0f);
-            GetComponent<Rigidbody2D>().AddForce(input.normalized * friction);
-        }*/
+            rb.AddForce(input * moveForce);
+        }
     }
 
     void UpdateWallCollision()

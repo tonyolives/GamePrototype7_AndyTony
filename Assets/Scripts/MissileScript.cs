@@ -11,6 +11,13 @@ public class MissileScript : MonoBehaviour
     public float influenceRange = 3f; // distance at which polarity force applies
     public LayerMask destructibleLayer; // layer mask for destructible objects
 
+    [Header("Magnetic Force Settings")]
+    public float attractStrength = 50f; // strength of magnetic pull
+    public float repelStrength = 30f;   // strength of close-range drop-off
+    public float attractPower = 2f;     // how fast attraction grows (e.g. gravity = 2)
+    public float repelPower = 4f;       // how fast repulsion grows (should be > attractPower)
+    public float minDistance = 0.5f;    // clamp to avoid zero division
+
     private Transform player;
     private SpriteRenderer playerSprite;
 
@@ -140,15 +147,5 @@ public class MissileScript : MonoBehaviour
             // decrease interval over time (faster blinking)
             interval = Mathf.Lerp(0.05f, 0.5f, 1f - t);
         }
-    }
-
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius); // explosion radius
-
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, influenceRange); // influence radius
     }
 }
