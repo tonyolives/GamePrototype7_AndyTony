@@ -150,6 +150,7 @@ public class PlayerScript : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Enemy hit!");
+            CameraScript.Instance.ShakeCamera(0.3f, 0.2f);
             StartCoroutine(DieWithDelay());
         }
     }
