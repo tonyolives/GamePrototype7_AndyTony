@@ -80,8 +80,17 @@ public class MissileScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log($"MISSILE hit object: {other.gameObject.name}, Layer: {LayerMask.LayerToName(other.gameObject.layer)}");
+
+        // Don't explode if colliding with another missile
+        if (other.gameObject.GetComponent<MissileScript>() != null)
+        {
+            // Missiles collided with each other, don't explode
+            return;
+        }
+
         // if not a turret explode
-        if (!other.gameObject.CompareTag("Turret")) {
+        if (!other.gameObject.CompareTag("Turret"))
+        {
             Explode();
         }
     }
@@ -131,11 +140,13 @@ public class MissileScript : MonoBehaviour
             yield return new WaitForSeconds(interval / 2f);
 
             // revert to normal color
-            if (isRedMissile) {
+            if (isRedMissile)
+            {
                 spriteRenderer.color = Color.red;
                 yield return new WaitForSeconds(interval / 2f);
             }
-            else {
+            else
+            {
                 spriteRenderer.color = Color.blue;
                 yield return new WaitForSeconds(interval / 2f);
             }
