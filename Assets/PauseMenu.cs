@@ -82,4 +82,46 @@ public class PauseMenu : MonoBehaviour
         Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
     }
+
+    public void LoadLevelOne()
+    {
+        Resume();
+        SceneManager.LoadScene("Layer 1");
+    }
+
+    public void LoadLevelTwo()
+    {
+        Resume();
+        SceneManager.LoadScene("Layer 2");
+    }
+
+    public void LoadLevelThree()
+    {
+        Resume();
+        SceneManager.LoadScene("Layer 3");
+    }
+
+    public void LoadLevelFour()
+    {
+        Resume();
+        SceneManager.LoadScene("Layer 4");
+    }
+
+    public void LoadLevelFive()
+    {
+        Resume();
+        SceneManager.LoadScene("Layer 5");
+    }
+
+    public void LoadLevelSix()
+    {
+        Resume();
+        SceneManager.LoadScene("Layer 6");
+    }
+
+    public void LoadLevelSeven()
+    {
+        Resume();
+        SceneManager.LoadScene("Layer 7");
+    }
 }
