@@ -51,8 +51,10 @@ public class CoinScript : MonoBehaviour
         if (!shouldMoveTowardPlayer) direction *= -1; // reverse if moving away
 
         // check if path clear using RayCast
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.5f, LayerMask.GetMask("Wall"));
-        if (hit.collider == null) // if no wall is hit, move the coin
+        RaycastHit2D hitWall = Physics2D.Raycast(transform.position, direction, 0.5f, LayerMask.GetMask("Wall"));
+        RaycastHit2D hitBox = Physics2D.Raycast(transform.position, direction, 0.5f, LayerMask.GetMask("Breakable"));
+
+        if (hitWall.collider == null && hitBox.collider == null) // if nothing is hit, move the coin
         {
             rb.MovePosition(rb.position + direction * attractionSpeed * Time.fixedDeltaTime);
         }
