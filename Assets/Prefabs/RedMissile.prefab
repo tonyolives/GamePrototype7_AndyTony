@@ -146,6 +146,12 @@ MonoBehaviour:
   destructibleLayer:
     serializedVersion: 2
     m_Bits: 4096
+  attractStrength: 20
+  repelStrength: 15
+  attractPower: 5
+  repelPower: 7
+  minDistance: 0.3
+  player: {fileID: 0}
 --- !u!50 &8874941992066823221
 Rigidbody2D:
   serializedVersion: 5

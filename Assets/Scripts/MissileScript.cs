@@ -13,12 +13,12 @@ public class MissileScript : MonoBehaviour
 
     [Header("Magnetic Force Settings")]
     public float attractStrength = 50f; // strength of magnetic pull
-    public float repelStrength = 30f;   // strength of close-range drop-off
-    public float attractPower = 2f;     // how fast attraction grows (e.g. gravity = 2)
-    public float repelPower = 4f;       // how fast repulsion grows (should be > attractPower)
-    public float minDistance = 0.5f;    // clamp to avoid zero division
+    public float repelStrength = 30f; // strength of close-range drop-off
+    public float attractPower = 2f; // how fast attraction grows (e.g. gravity = 2)
+    public float repelPower = 4f; // how fast repulsion grows (should be > attractPower)
+    public float minDistance = 0.5f; // clamp to avoid zero division
 
-    private Transform player;
+    public Transform player;
     private SpriteRenderer playerSprite;
 
     private Rigidbody2D rb;
@@ -56,7 +56,8 @@ public class MissileScript : MonoBehaviour
     {
         if (!player) return;
 
-        float distance = Vector2.Distance(transform.position, player.position);
+        Vector2 toPlayer = (Vector2)(player.position - transform.position);
+        float distance = toPlayer.magnitude;
 
         if (distance > influenceRange)
         {
@@ -64,16 +65,46 @@ public class MissileScript : MonoBehaviour
             return;
         }
 
+        // skip if player is neutral
+        if (player.GetComponent<PlayerScript>().IsInNeutralState()) return;
+
         // determine polarity interaction
-        Vector2 direction = (player.position - transform.position).normalized;
         bool playerIsRed = playerSprite.color == Color.red;
         bool shouldAttract = (playerIsRed && !isRedMissile) || (!playerIsRed && isRedMissile);
 
-        if (!shouldAttract) direction *= -1;
+        if (shouldAttract)
+        {
+            Vector2 dir = toPlayer.normalized;
+            float r = Mathf.Max(distance, minDistance); // avoid division by zero
 
-        // closer = stronger force
-        float strength = Mathf.Lerp(forcePower * 0.6f, forcePower, 1f - (distance / influenceRange));
-        currentVelocity = direction * strength;
+            // van der waals things
+
+            // float F_attr = attractStrength / Mathf.Pow(r, attractPower);
+            // float F_rep = repelStrength / Mathf.Pow(r, repelPower);
+            // float forceMag = F_attr - F_rep;
+
+            // hard clamp - hard to touch player
+            // if (forceMag < 0f) forceMag = 0f;
+
+            // no hard clamp - allows slight forward momentum
+            // forceMag = Mathf.Max(forceMag, -baseSpeed);
+
+            float barrierDistance = 0.8f; // tweakable sweet spot
+            float smoothFalloff = Mathf.Clamp01((r - minDistance) / (barrierDistance - minDistance));
+            float forceMag = Mathf.Lerp(forcePower, forcePower * 0.2f, 1f - smoothFalloff); // strong to soft pull
+
+            Vector2 perp = new Vector2(-dir.y, dir.x); // perpendicular direction
+            Vector2 curvedForce = dir * forceMag + perp * (forceMag * 0.4f); // tweak 0.2f for more curve
+            currentVelocity = curvedForce;
+        }
+        else if (!shouldAttract)
+        {
+            // repulsion: simple linear falloff like before
+            Vector2 dir = (-toPlayer).normalized;
+            float strength = Mathf.Lerp(forcePower * 0.6f, forcePower, 1f - (distance / influenceRange));
+            currentVelocity = dir * strength;
+        }
+
         rb.linearVelocity = currentVelocity;
     }
 
