@@ -23,27 +23,33 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/BacktrackScene.unity
     guid: f674481eb474a48c3a9dc874c346958d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Layer Levels/Layer 7.unity
     guid: 92357bf86d71c8646834ac6c9ef2f00c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Layer Levels/Layer 1.unity
     guid: 55205aacabe18364980605e52d35ccf7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Layer Levels/Layer 2.unity
     guid: c6563bd671426c14fa89ddba54efacd0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Layer Levels/Layer 3.unity
     guid: 33835a38aa563ed4c83d0f94fd7a115c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Layer Levels/Layer 4.unity
     guid: 2805eff4b8d802c4a87a91b3dc1c9e38
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Layer Levels/Layer 5.unity
     guid: f77d4469df4e3744f82aeb5f324b54c8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Layer Levels/Layer 6.unity
     guid: 80988d4aba1c3494cbe552d8e1a9810c
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/Main Menu.unity
+    guid: d469cf64f1b209c419194404c8a54a8a
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/Level 1.unity
+    guid: 6c5cb36f684089248af88c6deb1ce4ca
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -86,42 +86,25 @@ public class PauseMenu : MonoBehaviour
     public void LoadLevelOne()
     {
         Resume();
-        SceneManager.LoadScene("Layer 1");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void LoadLevelTwo()
     {
         Resume();
-        SceneManager.LoadScene("Layer 2");
+        SceneManager.LoadScene("Level 2");
     }
 
     public void LoadLevelThree()
     {
         Resume();
-        SceneManager.LoadScene("Layer 3");
+        SceneManager.LoadScene("Level 3");
     }
 
-    public void LoadLevelFour()
+    public void LoadMainMenu()
     {
         Resume();
-        SceneManager.LoadScene("Layer 4");
+        SceneManager.LoadScene("Main Menu");
     }
 
-    public void LoadLevelFive()
-    {
-        Resume();
-        SceneManager.LoadScene("Layer 5");
-    }
-
-    public void LoadLevelSix()
-    {
-        Resume();
-        SceneManager.LoadScene("Layer 6");
-    }
-
-    public void LoadLevelSeven()
-    {
-        Resume();
-        SceneManager.LoadScene("Layer 7");
-    }
 }
