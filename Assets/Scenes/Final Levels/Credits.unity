@@ -708,9 +708,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 142358689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1391, y: -36}
+  m_AnchorMin: {x: 0.864, y: 0.48800004}
+  m_AnchorMax: {x: 0.864, y: 0.48800004}
+  m_AnchoredPosition: {x: -6, y: -10}
   m_SizeDelta: {x: 692.5, y: 285.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663480224
@@ -844,10 +844,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 142358689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1354, y: -29}
-  m_SizeDelta: {x: 692.5, y: 285.9}
+  m_AnchorMin: {x: 0.14873958, y: 0.48800004}
+  m_AnchorMax: {x: 0.14873958, y: 0.48800004}
+  m_AnchoredPosition: {x: -5, y: -2}
+  m_SizeDelta: {x: 692.5, y: 285.90002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735380174
 MonoBehaviour:
@@ -1328,10 +1328,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 142358689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 497, y: -29}
-  m_SizeDelta: {x: 692.5, y: 285.9}
+  m_AnchorMin: {x: 0.6284792, y: 0.48800004}
+  m_AnchorMax: {x: 0.6284792, y: 0.48800004}
+  m_AnchoredPosition: {x: 3, y: -3}
+  m_SizeDelta: {x: 692.5, y: 285.90002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058445501
 MonoBehaviour:
@@ -1903,10 +1903,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 142358689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -418, y: -29}
-  m_SizeDelta: {x: 692.5, y: 285.9}
+  m_AnchorMin: {x: 0.39073962, y: 0.48800004}
+  m_AnchorMax: {x: 0.39073962, y: 0.48800004}
+  m_AnchoredPosition: {x: 4, y: -3}
+  m_SizeDelta: {x: 692.5, y: 285.90002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446356545
 MonoBehaviour:
@@ -2587,7 +2587,7 @@ GameObject:
   - component: {fileID: 2031307624}
   - component: {fileID: 2031307623}
   m_Layer: 5
-  m_Name: Andy (1)
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2607,10 +2607,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 142358689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460.9, y: -710.9}
-  m_SizeDelta: {x: 1597.2, y: 343}
+  m_AnchorMin: {x: 0.380323, y: 0.163}
+  m_AnchorMax: {x: 0.380323, y: 0.163}
+  m_AnchoredPosition: {x: -1.4000244, y: 17.099976}
+  m_SizeDelta: {x: 1598.2, y: 343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031307623
 MonoBehaviour:
