@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec24cad6ccc3e404ca55340761303949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attractionSpeed: 2.5
-  detectionRange: 3.5
+  attractionSpeed: 4
+  detectionRange: 5
 --- !u!82 &6741949438206634405
 AudioSource:
   m_ObjectHideFlags: 0
