@@ -111,4 +111,11 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void LoadCredits()
+    {
+        Resume();
+        SceneManager.LoadScene("Credits");
+    }
+
+
 }
