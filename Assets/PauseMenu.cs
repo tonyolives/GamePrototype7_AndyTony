@@ -5,8 +5,13 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameisPaused = false;
     public GameObject pauseMenuUI;
+    public BackgroundMusicController bkrd;
     [SerializeField] private bool isMainMenu = false;
 
+    private void Start()
+    {
+        bkrd = FindFirstObjectByType<BackgroundMusicController>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +36,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameisPaused = false;
+        bkrd.isPaused = false;
     }
 
     void Pause()
@@ -38,6 +44,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameisPaused = true;
+        bkrd.isPaused = true;
     }
 
     public void QuitGame()
@@ -90,30 +97,35 @@ public class PauseMenu : MonoBehaviour
     public void LoadLevelOne()
     {
         Resume();
+        bkrd.isPlaying = false;
         SceneManager.LoadScene("Level 1");
     }
 
     public void LoadLevelTwo()
     {
         Resume();
+        bkrd.isPlaying = false;
         SceneManager.LoadScene("Level 2");
     }
 
     public void LoadLevelThree()
     {
         Resume();
+        bkrd.isPlaying = false;
         SceneManager.LoadScene("Level 3");
     }
 
     public void LoadLevelFour()
     {
         Resume();
+        bkrd.isPlaying = false;
         SceneManager.LoadScene("Level 4");
     }
 
     public void LoadMainMenu()
     {
         Resume();
+        bkrd.isPlaying = false;
         SceneManager.LoadScene("Main Menu");
     }
 

@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     private bool isNeutral = false;
     private Color originalColor;
     private Coroutine neutralStateCoroutine;
+    public BackgroundMusicController bkrd;
 
     public void ActivateNeutralState(float duration)
     {
@@ -196,6 +197,7 @@ public class PlayerScript : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
 
+        bkrd.isPlaying = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
