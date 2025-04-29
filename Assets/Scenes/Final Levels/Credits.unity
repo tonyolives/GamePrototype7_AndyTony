@@ -551,7 +551,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 149237289}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 142358690}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OpenURL
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://www.linkedin.com/in/anthonyoliv/
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &149237289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,7 +858,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 583998318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 142358690}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OpenURL
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://www.amarimcclendon.info/
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &583998318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,7 +1352,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 782283817}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 142358690}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OpenURL
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://www.linkedin.com/in/rachel-brockman-game-designer/
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &782283817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,7 +1833,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 898547224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 142358690}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OpenURL
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://www.linkedin.com/in/andy-park-b5a76a236/
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &898547224
 MonoBehaviour:
   m_ObjectHideFlags: 0
