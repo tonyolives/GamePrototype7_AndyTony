@@ -5,7 +5,7 @@ public class BackgroundMusicController : MonoBehaviour
 {
 
     public bool isPaused = false;
-    public bool isPlaying = true;
+    public bool isPlaying = false;
     public AudioClip mainMenuMusic;
     public AudioClip levelMusic;
     public AudioSource _audio;
@@ -56,11 +56,25 @@ public class BackgroundMusicController : MonoBehaviour
                     _audio.Play();
                     isPlaying = true;
                 }
+                else if (_audio.clip != mainMenuMusic)
+                {
+                    _audio.Stop();
+                    _audio.clip = mainMenuMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
                 break;
 
             case "Level 1":
                 if (!isPlaying)
                 {
+                    _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
+                else if (_audio.clip != levelMusic)
+                {
+                    _audio.Stop();
                     _audio.clip = levelMusic;
                     _audio.Play();
                     isPlaying = true;
@@ -74,6 +88,13 @@ public class BackgroundMusicController : MonoBehaviour
                     _audio.Play();
                     isPlaying = true;
                 }
+                else if (_audio.clip != levelMusic)
+                {
+                    _audio.Stop();
+                    _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
                 break;
 
             case "Level 3":
@@ -83,11 +104,55 @@ public class BackgroundMusicController : MonoBehaviour
                     _audio.Play();
                     isPlaying = true;
                 }
+                else if (_audio.clip != levelMusic)
+                {
+                    _audio.Stop();
+                    _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
                 break;
 
             case "Level 4":
                 if (!isPlaying)
                 {
+                    _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
+                else if (_audio.clip != levelMusic)
+                {
+                    _audio.Stop();
+                    _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
+                break;
+            case "Tutorial1":
+                if (!isPlaying)
+                {
+                    _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
+                else if (_audio.clip != levelMusic)
+                {
+                    _audio.Stop();
+                    _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
+                break;
+            case "Tutorial2":
+                if (!isPlaying)
+                {
+                    _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
+                else if (_audio.clip != levelMusic)
+                {
+                    _audio.Stop();
                     _audio.clip = levelMusic;
                     _audio.Play();
                     isPlaying = true;
