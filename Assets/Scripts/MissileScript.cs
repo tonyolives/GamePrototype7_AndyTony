@@ -47,8 +47,8 @@ public class MissileScript : MonoBehaviour
         // set initial velocity
         currentVelocity = transform.up * baseSpeed;
 
-        // yellow missile flashing
-        StartCoroutine(FlashYellow());
+        // missile flashing
+        StartCoroutine(Flash());
 
         // detonate after set time
         Invoke("Explode", lifetime);
@@ -131,6 +131,7 @@ public class MissileScript : MonoBehaviour
     void Explode()
     {
         rb.linearVelocity = Vector2.zero;
+        spriteRenderer.color = Color.yellow;
         isExploding = true;
         StartCoroutine(ExpandAndExplode());
         SFX.Explosion();
@@ -162,15 +163,20 @@ public class MissileScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-    IEnumerator FlashYellow()
+    IEnumerator Flash()
     {
         float interval = 0.5f; // starts slow
         float elapsed = 0f;
 
         while (!isExploding)
         {
-            // flash yellow
-            spriteRenderer.color = Color.yellow;
+            // flash depending on color
+            if (isRedMissile) {
+                spriteRenderer.color = new Color(130f / 255f, 0f, 0f);
+            }
+            else {
+                spriteRenderer.color = new Color(0f, 0f, 130f / 255f);
+            }
             yield return new WaitForSeconds(interval / 2f);
 
             // revert to normal color
