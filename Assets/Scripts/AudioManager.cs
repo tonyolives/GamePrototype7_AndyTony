@@ -2,11 +2,34 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioSource BtnClickSFX;
+    public AudioSource CoinSFX;
+    public AudioSource DieSFX;
+    public AudioSource MissileSFX;    
     public AudioSource TurretFireSFX;
     public AudioSource WinSFX;
-    public AudioSource MissileSFX;
-    public AudioSource BtnClickSFX;
 
+
+   
+    public void BtnClick()
+    {
+        BtnClickSFX.Play(0);
+    }
+
+    public void CoinCollect()
+    {
+        CoinSFX.Play(0);
+    }
+
+    public void Death()
+    {
+        DieSFX.Play(0);
+    }
+
+    public void Missile()
+    {
+        MissileSFX.Play(0);
+    }
     
     public void TurretFire()
     {
@@ -16,16 +39,6 @@ public class AudioManager : MonoBehaviour
     public void Win()
     {
         WinSFX.Play(0);
-    }
-
-    public void Missile()
-    {
-        MissileSFX.Play(0);
-    }
-
-    public void BtnClick()
-    {
-        BtnClickSFX.Play(0);
     }
 
 }
