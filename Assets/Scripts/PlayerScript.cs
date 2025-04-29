@@ -16,6 +16,8 @@ public class PlayerScript : MonoBehaviour
     private Color originalColor;
     private Coroutine neutralStateCoroutine;
     public BackgroundMusicController bkrd;
+    
+    [SerializeField] private AudioManager audioManager;
 
     public void ActivateNeutralState(float duration)
     {
@@ -88,6 +90,7 @@ public class PlayerScript : MonoBehaviour
             else if (_spriteRenderer.color == Color.blue) _spriteRenderer.color = Color.red;
             // see if you can pass through blue wall
             UpdateWallCollision();
+            audioManager.Swap();	
         }
 
         // on R click
@@ -169,7 +172,7 @@ public class PlayerScript : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
 
         // Play death sound
-        PlayDeathSound();
+        audioManager.Death();
 
         yield return new WaitForSeconds(1.0f);
 
@@ -179,7 +182,7 @@ public class PlayerScript : MonoBehaviour
 
     public void StartFlashingAndRestart()
     {
-        PlayVictorySound();
+        audioManager.Win();
         StartCoroutine(FlashGreenAndRestart());
     }
 
@@ -203,15 +206,4 @@ public class PlayerScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void PlayVictorySound()
-    {
-        audioSource.clip = victoryClip;
-        audioSource.Play();
-    }
-
-    public void PlayDeathSound()
-    {
-        audioSource.clip = deathClip;
-        audioSource.Play();
-    }
 }

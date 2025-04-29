@@ -27,7 +27,8 @@ public class MissileScript : MonoBehaviour
     private bool isExploding = false;
     private Vector3 initialDirection;
     private Vector2 currentVelocity;
-
+    
+    [SerializeField] private AudioManager audioManager;
 
     void Start()
     {
@@ -131,6 +132,7 @@ public class MissileScript : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         isExploding = true;
         StartCoroutine(ExpandAndExplode());
+        audioManager.Explosion();
     }
 
     IEnumerator ExpandAndExplode()

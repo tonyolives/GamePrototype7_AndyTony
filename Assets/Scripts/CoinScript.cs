@@ -11,6 +11,8 @@ public class CoinScript : MonoBehaviour
     private bool isRedCoin;
     private bool collected = false;
 
+    [SerializeField] private AudioManager audioManager;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -67,10 +69,9 @@ public class CoinScript : MonoBehaviour
             Debug.Log("Coin is inside win area!");
             collected = true; // Mark as collected to prevent multiple triggers
             rb.linearVelocity = Vector2.zero; // Stop moving
-            if (audioSource != null)
-            {
-                audioSource.Play(); // Play sound effect
-            }
+           
+            audioManager.CoinCollect();	
+
             // notify GameManager
             GameManager.instance.CoinCollected(); // Notify GameManager
             // Disable sprite and collider but keep the object until sound finishes
