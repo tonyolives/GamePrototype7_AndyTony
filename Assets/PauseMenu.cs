@@ -105,6 +105,12 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Level 3");
     }
 
+    public void LoadLevelFour()
+    {
+        Resume();
+        SceneManager.LoadScene("Level 4");
+    }
+
     public void LoadMainMenu()
     {
         Resume();
