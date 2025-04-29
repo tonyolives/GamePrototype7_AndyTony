@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 142358690}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: LoadCredits
+        m_MethodName: LoadTutorial1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1399,7 +1399,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ad17a9e70c442f042a65262cf7336e27, type: 3}
   m_Resource: {fileID: 8300000, guid: ad17a9e70c442f042a65262cf7336e27, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -1536,10 +1536,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3e5cedb3e836d748ae946a183d45e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BtnClickSFX: {fileID: 0}
+  CoinSFX: {fileID: 0}
+  DieSFX: {fileID: 0}
+  MissileSFX: {fileID: 0}
   TurretFireSFX: {fileID: 0}
   WinSFX: {fileID: 0}
-  MissileSFX: {fileID: 0}
-  BtnClickSFX: {fileID: 0}
 --- !u!1 &970469370
 GameObject:
   m_ObjectHideFlags: 0

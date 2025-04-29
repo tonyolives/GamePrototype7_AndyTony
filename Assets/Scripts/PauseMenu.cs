@@ -99,6 +99,7 @@ public class PauseMenu : MonoBehaviour
         Resume();
         bkrd.isPlaying = false;
         SceneManager.LoadScene("Level 1");
+        bkrd.isPlaying = false;
     }
 
     public void LoadLevelTwo()
@@ -106,6 +107,7 @@ public class PauseMenu : MonoBehaviour
         Resume();
         bkrd.isPlaying = false;
         SceneManager.LoadScene("Level 2");
+        bkrd.isPlaying = false;
     }
 
     public void LoadLevelThree()
@@ -113,6 +115,7 @@ public class PauseMenu : MonoBehaviour
         Resume();
         bkrd.isPlaying = false;
         SceneManager.LoadScene("Level 3");
+        bkrd.isPlaying = false;
     }
 
     public void LoadLevelFour()
@@ -120,6 +123,7 @@ public class PauseMenu : MonoBehaviour
         Resume();
         bkrd.isPlaying = false;
         SceneManager.LoadScene("Level 4");
+        bkrd.isPlaying = false;
     }
 
     public void LoadMainMenu()
@@ -127,6 +131,15 @@ public class PauseMenu : MonoBehaviour
         Resume();
         bkrd.isPlaying = false;
         SceneManager.LoadScene("Main Menu");
+        bkrd.isPlaying = false;
+    }
+
+    public void LoadTutorial1()
+    {
+        Resume();
+        bkrd.isPlaying = false;
+        SceneManager.LoadScene("Tutorial1");
+        bkrd.isPlaying = false;
     }
 
     public void LoadCredits()
