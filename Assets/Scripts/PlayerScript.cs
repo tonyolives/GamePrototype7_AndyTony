@@ -198,7 +198,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         bkrd.isPlaying = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PlayVictorySound()
