@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GatlingTurret_0: 6924971477553759806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

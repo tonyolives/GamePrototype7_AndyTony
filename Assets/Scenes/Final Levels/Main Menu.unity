@@ -1361,6 +1361,7 @@ GameObject:
   - component: {fileID: 939711340}
   - component: {fileID: 939711339}
   - component: {fileID: 939711342}
+  - component: {fileID: 939711343}
   m_Layer: 3
   m_Name: BkrdMusic
   m_TagString: Untagged
@@ -1523,6 +1524,22 @@ AudioLowPassFilter:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &939711343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939711338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e5cedb3e836d748ae946a183d45e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurretFireSFX: {fileID: 0}
+  WinSFX: {fileID: 0}
+  MissileSFX: {fileID: 0}
+  BtnClickSFX: {fileID: 0}
 --- !u!1 &970469370
 GameObject:
   m_ObjectHideFlags: 0
