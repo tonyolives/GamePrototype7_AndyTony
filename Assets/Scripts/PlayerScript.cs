@@ -185,6 +185,9 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator FlashGreenAndRestart()
     {
+        //Stop bkrd audio
+        bkrd._audio.Stop();
+
         // Set dying flag to true to stop movement during victory animation
         isDying = true;
 
