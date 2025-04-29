@@ -28,11 +28,12 @@ public class MissileScript : MonoBehaviour
     private Vector3 initialDirection;
     private Vector2 currentVelocity;
     
-    [SerializeField] private AudioManager audioManager;
+    public AudioManager SFX;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        SFX = FindFirstObjectByType<AudioManager>();
         playerSprite = player.GetComponent<SpriteRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -132,7 +133,7 @@ public class MissileScript : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         isExploding = true;
         StartCoroutine(ExpandAndExplode());
-        audioManager.Explosion();
+        SFX.Explosion();
     }
 
     IEnumerator ExpandAndExplode()
