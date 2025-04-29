@@ -153,4 +153,9 @@ public class PauseMenu : MonoBehaviour
         Resume();
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void OpenURL(string urlname)
+    {
+        Application.OpenURL(urlname);
+    }
 }
