@@ -13,6 +13,7 @@ public class MissileTurretScript : MonoBehaviour
     public bool isBlue;
     public bool isRed;
     public bool isWide;
+    public bool isGatling;
 
     public Transform widePointcenter;
     public Transform widePointLeft;
@@ -21,6 +22,12 @@ public class MissileTurretScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (isGatling)
+        {
+            InvokeRepeating(nameof(FireGatlingBurst), 1f, fireRate);
+            return; // so no other modes instantiate
+        }
         
         if ((isBlue == false && isRed == false) || (isBlue == true && isRed == true))
         {
@@ -98,6 +105,21 @@ public class MissileTurretScript : MonoBehaviour
         else
         {
             Instantiate(prefab, firePoint.position, firePoint.rotation);
+        }
+    }
+
+    void FireGatlingBurst()
+    {
+        StartCoroutine(GatlingBurstCoroutine());
+    }
+
+    System.Collections.IEnumerator GatlingBurstCoroutine()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject prefab = (Random.value > 0.5f) ? redMissilePrefab : blueMissilePrefab;
+            Instantiate(prefab, firePoint.position, firePoint.rotation);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
