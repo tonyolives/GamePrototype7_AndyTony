@@ -63,6 +63,8 @@ public class PlayerScript : MonoBehaviour
 
         // audio source component to access victory noise
         audioSource = GetComponent<AudioSource>();
+
+        bkrd = FindFirstObjectByType<BackgroundMusicController>();
     }
 
     void Update()

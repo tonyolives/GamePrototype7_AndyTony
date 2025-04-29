@@ -3932,7 +3932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 951ba378dd84a4aee86a2ac89456ec5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCoins: 4
+  totalCoins: 1
 --- !u!4 &2113917742
 Transform:
   m_ObjectHideFlags: 0
