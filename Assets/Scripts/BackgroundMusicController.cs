@@ -8,6 +8,7 @@ public class BackgroundMusicController : MonoBehaviour
     public bool isPlaying = false;
     public AudioClip mainMenuMusic;
     public AudioClip levelMusic;
+    public AudioClip endMusic;
     public AudioSource _audio;
     public AudioLowPassFilter _filter;
 
@@ -154,6 +155,21 @@ public class BackgroundMusicController : MonoBehaviour
                 {
                     _audio.Stop();
                     _audio.clip = levelMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
+                break;
+            case "End Credits":
+                if (!isPlaying)
+                {
+                    _audio.clip = endMusic;
+                    _audio.Play();
+                    isPlaying = true;
+                }
+                else if (_audio.clip != endMusic)
+                {
+                    _audio.Stop();
+                    _audio.clip = endMusic;
                     _audio.Play();
                     isPlaying = true;
                 }

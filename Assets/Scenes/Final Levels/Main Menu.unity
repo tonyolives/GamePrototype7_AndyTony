@@ -1643,6 +1643,7 @@ MonoBehaviour:
   isPlaying: 1
   mainMenuMusic: {fileID: 8300000, guid: ad17a9e70c442f042a65262cf7336e27, type: 3}
   levelMusic: {fileID: 8300000, guid: 37505fc4125091f4cb31d4fde7c37a78, type: 3}
+  endMusic: {fileID: 8300000, guid: 8e1e83ea565dbe94cbad940f4421c623, type: 3}
   _audio: {fileID: 939711340}
   _filter: {fileID: 939711342}
 --- !u!82 &939711340
