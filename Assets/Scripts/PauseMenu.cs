@@ -148,6 +148,12 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void LoadLevelSelect()
+    {
+        Resume();
+        SceneManager.LoadScene("Level Select");
+    }
+
     public void LoadMenuFromCredits()
     {
         Resume();
